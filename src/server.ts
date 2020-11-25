@@ -5,7 +5,10 @@ import './database';
 import 'reflect-metadata';
 import uploadConfig from './config/upload';
 import AppError from './errors/AppError';
+import cors from 'cors';
+
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.directory));
 app.use(routes);
@@ -23,7 +26,7 @@ app.use(
       status: 'error',
       message: 'Internal Server Error',
     });
-  }
+  },
 );
 
 app.listen(3333, () => {
