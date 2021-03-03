@@ -5,6 +5,7 @@ build/
 tmp/*
 temp/
 !tmp/.gitkeep
+!tmp/uploads/.gitkeep
 desafio/*
 .env
 ormconfig.json
