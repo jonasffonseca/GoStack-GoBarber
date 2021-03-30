@@ -6,7 +6,7 @@ import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 import multer from 'multer';
 import uploadConfig from '@config/upload';
 const usersRouter = Router();
-const upload = multer(uploadConfig);
+const upload = multer(uploadConfig.multer);
 const usersController = new UsersController();
 const userAvatarController = new UserAvatarController();
 
