@@ -1,24 +1,29 @@
 import React from "react";
-import Button from "../../components/Button";
+import { Container, Header, HeaderContent, Profile } from "./styles";
+import logoImg from "../../assets/logo.svg";
+import { FiPower } from "react-icons/fi";
 import { useAuth } from "../../hooks/AuthContext";
-import { Container, Background, Content } from "./styles";
 
 const Dashboard: React.FC = () => {
-  const { signOut } = useAuth();
-  const name = localStorage.getItem("@GoBarber:name");
+  const { signOut, user } = useAuth();
   return (
-    <>
-      <Container>
-        <Content>
-          <h1>Dashboard</h1>
-          <h3>Olá {name}!</h3>
-          <Button type="submit" onClick={signOut}>
-            Logout
-          </Button>
-        </Content>
-        <Background />
-      </Container>
-    </>
+    <Container>
+      <Header>
+        <HeaderContent>
+          <img src={logoImg} alt="GoBarber" />
+          <Profile>
+            <img src={user.avatar_url} alt={user.name} />
+            <div>
+              <span>Bem-vindo,</span>
+              <strong>{user.name}</strong>
+            </div>
+          </Profile>
+          <button type="button" onClick={signOut}>
+            <FiPower />
+          </button>
+        </HeaderContent>
+      </Header>
+    </Container>
   );
 };
 

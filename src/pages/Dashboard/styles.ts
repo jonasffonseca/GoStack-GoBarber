@@ -2,27 +2,54 @@ import styled from "styled-components";
 import dashboardBackground from "../../assets/dashboard-background.jpg";
 
 export const Container = styled.div`
-  height: 100vh;
+  /* height: 100vh;
   display: flex;
-  align-items: stretch;
+  align-items: stretch; */
 `;
 
-export const Content = styled.div`
+export const Header = styled.header`
+  padding: 32px 0;
+  background: #28262e;
+`;
+export const HeaderContent = styled.div`
+  max-width: 1120px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  max-width: 700px;
 
+  > img {
+    height: 80px;
+  }
   button {
-    width: 20%;
-    margin-top: 70%;
+    margin-left: auto;
+    background: transparent;
+    border: 0;
+    svg {
+      color: #999591;
+      height: 20px;
+      width: 20px;
+    }
   }
 `;
-
-export const Background = styled.div`
-  flex: 1;
-  background: url(${dashboardBackground}) no-repeat center;
-  background-size: cover;
+export const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 80px;
+  img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    line-height: 24px;
+    span {
+      color: #f4ede8;
+    }
+    strong {
+      color: #ff9000;
+    }
+  }
 `;
